@@ -1,5 +1,5 @@
 use std::env;
-use std::io::Write;
+use std::io::{Read, Write};
 use std::net::TcpStream;
 
 fn main() {
@@ -14,6 +14,16 @@ fn main() {
         Ok(mut stream) => {
             stream.write_all(message.as_bytes()).expect("Failed to send message");
             println!("Sent: {}", message);
+            let mut buffer = [0; 512];
+            match stream.read(&mut buffer) {
+                Ok(size) => {
+                    let response = String::from_utf8_lossy(&buffer[..size]);
+                    println!("Received: {}", response);
+                }
+                Err(e) => {
+                    eprintln!("Failed to read response: {}", e);
+                }
+            }
         }
         Err(e) => {
             eprintln!("Failed to connect: {}", e);
