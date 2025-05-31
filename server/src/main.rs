@@ -3,7 +3,6 @@ use std::io::{Read, Write};
 use std::net::TcpListener;
 use std::net::TcpStream;
 
-pub mod server;
 pub mod lib {
     pub mod datastructures {
         pub mod btree;
