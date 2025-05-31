@@ -1,0 +1,9 @@
+[workspace]
+members = ["lib", "client", "server"]
+resolver = "2"
+
+[workspace.dependencies]
+# Add common dependencies here that all projects might use
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+# Add other shared dependencies as needed
