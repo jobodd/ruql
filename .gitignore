@@ -1,0 +1,32 @@
+/target/
+
+# Rust
+/target/
+**/*.rs.bk
+**/*.swp
+Cargo.lock
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# By-products
+*.d
+*.pdb
+
+# Ignore node_modules if present
+node_modules/
+
+# Ignore Python cache if present
+__pycache__/
+*.pyc
+
+# Ignore Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
